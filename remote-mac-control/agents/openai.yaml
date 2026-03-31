@@ -1,0 +1,4 @@
+interface:
+  display_name: "Remote Mac Control"
+  short_description: "通过 Tailscale 和 SSH 远程控制 Mac"
+  default_prompt: "Use $remote-mac-control to set up or troubleshoot remote Mac command access over Tailscale and SSH."
