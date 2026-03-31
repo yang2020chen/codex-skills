@@ -1,0 +1,4 @@
+interface:
+  display_name: "Remote Windows Control"
+  short_description: "通过 Tailscale 和 SSH 远程控制 Windows"
+  default_prompt: "Use $remote-windows-control to set up or troubleshoot remote Windows command access over Tailscale and SSH."
