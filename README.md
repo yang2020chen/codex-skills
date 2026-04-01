@@ -80,6 +80,28 @@ Path:
 
 - [remote-windows-control/SKILL.md](./remote-windows-control/SKILL.md)
 
+### `xianyu-login-state-extractor`
+
+A standalone Chrome extension project for extracting Xianyu / Goofish login-state JSON.
+
+Best for:
+
+- extracting Goofish cookies including `HttpOnly`
+- capturing request headers and browser environment
+- generating reusable login-state JSON for automation tools
+- packaging a small browser extension as a reusable side project
+
+What it includes:
+
+- standalone Chrome extension source
+- generated extension icons
+- privacy-policy page
+- packaging script for zip distribution
+
+Path:
+
+- [xianyu-login-state-extractor/README.md](./xianyu-login-state-extractor/README.md)
+
 ## Suggested Usage
 
 For a full project analysis:

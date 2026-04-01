@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>闲鱼登录态提取器</title>
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --card: #ffffff;
+      --text: #152033;
+      --muted: #66758f;
+      --primary: #0f172a;
+      --accent: #0f9d7a;
+      --accent-soft: #e7f8f2;
+      --danger-soft: #fff1f2;
+      --danger: #c2410c;
+      --border: #d9e1ec;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 440px;
+      margin: 0;
+      padding: 18px;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+      color: var(--text);
+      font-family: "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+    }
+
+    .header {
+      padding: 18px 18px 10px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      margin: 12px 0 8px;
+      font-size: 24px;
+      line-height: 1.15;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .content {
+      padding: 0 18px 18px;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 16px 0 12px;
+    }
+
+    button {
+      border: none;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.7;
+      cursor: wait;
+      transform: none;
+    }
+
+    #extractBtn {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.18);
+    }
+
+    #copyBtn {
+      background: #edf2f8;
+      color: var(--text);
+    }
+
+    .status {
+      min-height: 18px;
+      margin-bottom: 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+      background: transparent;
+      color: var(--muted);
+    }
+
+    .status.success {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .status.error {
+      background: var(--danger-soft);
+      color: var(--danger);
+    }
+
+    textarea {
+      width: 100%;
+      height: 320px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #f8fafc;
+      color: #122033;
+      padding: 14px;
+      resize: vertical;
+      font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      white-space: pre;
+    }
+
+    .tips {
+      margin-top: 12px;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .tips li + li {
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <div class="header">
+      <span class="eyebrow">XIANYU ONLY</span>
+      <h1>闲鱼登录态提取器</h1>
+      <p>在已登录的闲鱼页面一键提取 Cookie、请求头和浏览器环境，生成可复制的 JSON。</p>
+    </div>
+
+    <div class="content">
+      <div class="actions">
+        <button id="extractBtn">提取登录态 JSON</button>
+        <button id="copyBtn">复制到剪贴板</button>
+      </div>
+
+      <div id="status" class="status"></div>
+      <textarea id="stateOutput" readonly placeholder="提取结果会显示在这里"></textarea>
+
+      <ol class="tips">
+        <li>先打开并登录 <code>goofish.com</code>。</li>
+        <li>点击“提取登录态 JSON”后等待结果生成。</li>
+        <li>复制后可保存为 <code>xianyu_state.json</code> 或粘贴到其他程序。</li>
+      </ol>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>闲鱼登录态提取器隐私说明</title>
+  <style>
+    body {
+      max-width: 860px;
+      margin: 40px auto;
+      padding: 0 16px 48px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: #1f2937;
+    }
+
+    h1, h2 {
+      color: #111827;
+    }
+
+    code {
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>闲鱼登录态提取器隐私说明</h1>
+  <p>版本：2026-04-01</p>
+
+  <h2>用途</h2>
+  <p>本扩展唯一用途是在用户主动点击“提取登录态 JSON”时，读取当前闲鱼页面的登录态 Cookie、请求头和浏览器环境信息，并生成本地 JSON 供用户自行复制和保存。</p>
+
+  <h2>收集内容</h2>
+  <ul>
+    <li>当前闲鱼页面 Cookie，包括 `HttpOnly` Cookie。</li>
+    <li>当前页面 URL、来源页、页面可见状态。</li>
+    <li>浏览器环境信息，例如 User-Agent、语言、时区、屏幕尺寸、硬件并发数。</li>
+    <li>当前域名下的 `localStorage` 和 `sessionStorage` 快照。</li>
+    <li>一次真实请求中可观察到的常用请求头。</li>
+  </ul>
+
+  <h2>数据使用方式</h2>
+  <ul>
+    <li>所有数据仅在本地浏览器中处理。</li>
+    <li>扩展不会自动上传数据到任何服务器。</li>
+    <li>复制到剪贴板仅在用户主动点击时发生。</li>
+  </ul>
+
+  <h2>权限说明</h2>
+  <ul>
+    <li><code>cookies</code>：读取闲鱼站点 Cookie。</li>
+    <li><code>scripting</code>：读取页面环境和 Web Storage。</li>
+    <li><code>webRequest</code>：观察一次页面请求头。</li>
+    <li><code>activeTab</code> / <code>tabs</code>：定位当前活动标签页。</li>
+  </ul>
+
+  <h2>用户控制</h2>
+  <ul>
+    <li>只有用户点击提取按钮时才会触发采集。</li>
+    <li>用户可以随时停用或卸载扩展。</li>
+  </ul>
+
+  <h2>风险提示</h2>
+  <p>登录态 JSON 属于敏感身份信息，请只在可信设备和可信系统中使用，不要随意分享给他人。</p>
+</body>
+</html>
