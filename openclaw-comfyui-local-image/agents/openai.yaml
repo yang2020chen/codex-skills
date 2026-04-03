@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenClaw ComfyUI Local Image"
+  short_description: "把 OpenClaw 接到本地 ComfyUI 出图链路"
+  default_prompt: "Use $openclaw-comfyui-local-image to connect OpenClaw to a local ComfyUI workflow through MCP, validate the adapter path, and make image generation use the local ComfyUI tool instead of a built-in image model."

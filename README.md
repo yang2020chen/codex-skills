@@ -80,6 +80,30 @@ Path:
 
 - [remote-windows-control/SKILL.md](./remote-windows-control/SKILL.md)
 
+### `openclaw-comfyui-local-image`
+
+Guide for connecting OpenClaw to a local ComfyUI workflow through MCP so the agent can generate images with a local backend instead of a built-in image model.
+
+Best for:
+
+- OpenClaw + ComfyUI local image generation
+- MCP bridge design for ComfyUI
+- fixed workflow template automation
+- Flux2-style prompt shaping
+- slow-job result querying and timeout handling
+- duplicate-submission troubleshooting
+
+What it does:
+
+- recommends a stable `OpenClaw -> MCP -> adapter -> ComfyUI` structure
+- explains how to expose `generate_local_image` and `get_local_image_result`
+- shows how to validate the chain from terminal to agent
+- includes prompt and slow-job query patterns
+
+Path:
+
+- [openclaw-comfyui-local-image/SKILL.md](./openclaw-comfyui-local-image/SKILL.md)
+
 ### `xianyu-login-state-extractor`
 
 A standalone Chrome extension project for extracting Xianyu / Goofish login-state JSON.
